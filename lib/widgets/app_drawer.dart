@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/appbar_image/appbar_image.dart';
 import 'package:flutter_shop/clipper/clipper_widget.dart';
+import 'package:flutter_shop/custom_paint/custom_paint_index.dart';
+import 'package:flutter_shop/full_screen_clip/full_screen_clip.dart';
 import 'package:flutter_shop/screens/user_products_screen.dart';
 
 import '../screens/orders_screen.dart';
@@ -49,6 +52,38 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.of(context)
                   .pushReplacementNamed(ClipperWidget.routeName);
+            },
+          ),
+
+          // full screen clipper
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.circle),
+            title: const Text('Full Screen Clip'),
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(FullScreenClip.routeName);
+            },
+          ),
+
+          // custom paint
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.person_pin_circle_outlined),
+            title: const Text('Custom Paint'),
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(CustomPaintIndex.routeName);
+            },
+          ),
+
+          // appbar background image
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.backup),
+            title: const Text('Custom Paint'),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed(AppBarImage.routeName);
             },
           ),
         ],

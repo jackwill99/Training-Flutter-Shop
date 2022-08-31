@@ -120,7 +120,7 @@ class ExampleNoListenWidget extends StatelessWidget {
               '${counter.count}',
               style: Theme.of(context).textTheme.headline1,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: const Text("Increment"),
               onPressed: () => counter.increment(),
             )

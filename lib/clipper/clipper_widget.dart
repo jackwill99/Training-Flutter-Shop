@@ -8,14 +8,23 @@ class ClipperWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Clipper"),
-        backgroundColor: Colors.transparent,
-        elevation: 0.00,
-      ),
+      // appBar: AppBar(
+      //   title: const Text("Clipper"),
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0.00,
+      // ),
+      // extendBody: true,
+      resizeToAvoidBottomInset:true,
       extendBodyBehindAppBar: true,
       body: Stack(
         children: [
+          Scaffold(
+            appBar: AppBar(
+              elevation: 1.0,
+              backgroundColor: Colors.transparent,
+              title: Text('Testing'),
+            ),
+          ),
           ClipPath(
             clipper: BigClipper(),
             child: Container(
@@ -28,6 +37,7 @@ class ClipperWidget extends StatelessWidget {
               color: Colors.red,
             ),
           ),
+
         ],
       ),
     );

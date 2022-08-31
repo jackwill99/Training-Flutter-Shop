@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/clipper/clippers.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/app_drawer.dart';
@@ -26,7 +25,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('MyShop'),
-        backgroundColor: Colors.transparent,
+        // backgroundColor: Colors.transparent,
         elevation: 0.00,
         actions: <Widget>[
           PopupMenuButton(
@@ -69,25 +68,9 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           ),
         ],
       ),
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
       drawer: AppDrawer(),
-      body: Stack(
-        children: [
-          ClipPath(
-            clipper: BigClipper(),
-            child: Container(
-              color: Colors.orangeAccent,
-            ),
-          ),
-          ClipPath(
-            clipper: SmallClipper(),
-            child: Container(
-              color: Colors.red,
-            ),
-          ),
-          ProductsGrid(_showOnlyFavorites),
-        ],
-      ),
+      body: ProductsGrid(_showOnlyFavorites),
     );
   }
 }
