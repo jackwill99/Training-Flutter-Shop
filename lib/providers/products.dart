@@ -74,6 +74,7 @@ class Products with ChangeNotifier {
   // }
 
   void addProduct(Product product) {
+    print(product);
     final newProduct = Product(
       title: product.title,
       description: product.description,
@@ -88,7 +89,8 @@ class Products with ChangeNotifier {
 
   void updateProduct(String id, Product newProduct) {
     final prodIndex = _items.indexWhere((prod) => prod.id == id);
-    if (prodIndex >= 0) {
+    print(prodIndex);
+    if (prodIndex != -1) {
       _items[prodIndex] = newProduct;
       notifyListeners();
     } else {
